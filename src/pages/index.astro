@@ -5,24 +5,30 @@ console.log("This runs in your terminal, not the browser!");
 import { Image } from "astro:assets";
 import Logo from "../../assets/logo.svg";
 import Rocket from "../../assets/rocket.jpg";
+import "../styles/global.css";
 ---
 
 <!-- Below is your "component template." It's just HTML, but with
     some magic sprinkled in to help you build great templates. -->
-<html>
+<html class="bg-gray-100">
   <head>
     <title>Astro 5.0 Features</title>
   </head>
-  <body>
-    <header>
-      <h1>Welcome to Astro 5.0</h1>
-      <p>Discover the latest features and improvements!</p>
+  <body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-bold text-orange-500">Welcome to Astro 5.0</h1>
+      <p class="text-lg text-gray-700">
+        Discover the latest features and improvements!
+      </p>
     </header>
 
-    <section>
-      <h2>Content Layer</h2>
-      <p>Manage content from various sources with a unified, type-safe API.</p>
-      <pre>
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 w-full max-w-3xl">
+      <h2 class="text-2xl font-semibold mb-4">Content Layer</h2>
+      <p class="text-gray-600 mb-4">
+        Manage content from various sources with a unified, type-safe API.
+      </p>
+      <pre
+        class="bg-gray-100 p-4 rounded-md">
         <code>
           const blog = defineCollection(&#123;
             loader: glob(&#123; pattern: "**/*.md", base: "./src/data/blog" &#125;),
@@ -32,34 +38,49 @@ import Rocket from "../../assets/rocket.jpg";
       </pre>
     </section>
 
-    <section>
-      <h2>Server Islands</h2>
-      <p>
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 w-full max-w-3xl">
+      <h2 class="text-2xl font-semibold mb-4">Server Islands</h2>
+      <p class="text-gray-600 mb-4">
         Combine static HTML with dynamic server-generated components for
         optimized caching and personalization.
       </p>
       <img
+        class="rounded-md"
         src="https://astro.build/_astro/dark-mode-server-islands-diag.CCPm1I4W_ZDEJr.webp"
         alt="Server Islands Diagram"
       />
     </section>
 
-    <section>
-      <h2>Experimental Features</h2>
-      <h3>Image Cropping</h3>
-      <Image src={Logo} fit="cover" width={200} height={200} alt="Astro logo" />
+    <section class="bg-white shadow-md rounded-lg p-6 mb-8 w-full max-w-3xl">
+      <h2 class="text-2xl font-semibold mb-4">Experimental Features</h2>
+      <h3 class="text-xl font-medium mb-2">Image Cropping</h3>
+      <Image
+        src={Logo}
+        fit="cover"
+        width={200}
+        height={200}
+        alt="Astro logo"
+        class="rounded-md"
+      />
 
-      <h3>Responsive Image Layouts</h3>
-      <Image src={Rocket} width={800} height={600} alt="Rocket" />
+      <h3 class="text-xl font-medium mt-4 mb-2">Responsive Image Layouts</h3>
+      <Image
+        src={Rocket}
+        width={800}
+        height={600}
+        alt="Rocket"
+        class="rounded-md"
+      />
 
-      <h3>SVG Component</h3>
-      <Logo width={100} height={100} fill="blue" />
+      <h3 class="text-xl font-medium mt-4 mb-2">SVG Component</h3>
+      <Logo width={100} height={100} fill="blue" class="rounded-md" />
     </section>
 
-    <footer>
-      <p>
+    <footer class="text-center mt-8">
+      <p class="text-gray-600">
         Learn more about Astro 5.0 on the <a
-          href="https://astro.build/blog/astro-5/">official blog</a
+          href="https://astro.build/blog/astro-5/"
+          class="text-blue-500">official blog</a
         >.
       </p>
     </footer>
