@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# Build output
+dist/
+
+# Astro cache
+.astro/
+
+# Environment variables
+.env
+.env.local
+
+# IDE settings
+.vscode/
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Coverage reports
+coverage/

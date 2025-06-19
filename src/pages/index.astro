@@ -1,0 +1,72 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+console.log("This runs in your terminal, not the browser!");
+import { Image } from "astro:assets";
+import Logo from "../../assets/logo.svg";
+import Rocket from "../../assets/rocket.jpg";
+---
+
+<!-- Below is your "component template." It's just HTML, but with
+    some magic sprinkled in to help you build great templates. -->
+<html>
+  <head>
+    <title>Astro 5.0 Features</title>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Astro 5.0</h1>
+      <p>Discover the latest features and improvements!</p>
+    </header>
+
+    <section>
+      <h2>Content Layer</h2>
+      <p>Manage content from various sources with a unified, type-safe API.</p>
+      <pre>
+        <code>
+          const blog = defineCollection(&#123;
+            loader: glob(&#123; pattern: "**/*.md", base: "./src/data/blog" &#125;),
+            schema: z.object(&#123; /* type-safe schema */ &#125;),
+          &#125;);
+        </code>
+      </pre>
+    </section>
+
+    <section>
+      <h2>Server Islands</h2>
+      <p>
+        Combine static HTML with dynamic server-generated components for
+        optimized caching and personalization.
+      </p>
+      <img
+        src="https://astro.build/_astro/dark-mode-server-islands-diag.CCPm1I4W_ZDEJr.webp"
+        alt="Server Islands Diagram"
+      />
+    </section>
+
+    <section>
+      <h2>Experimental Features</h2>
+      <h3>Image Cropping</h3>
+      <Image src={Logo} fit="cover" width={200} height={200} alt="Astro logo" />
+
+      <h3>Responsive Image Layouts</h3>
+      <Image src={Rocket} width={800} height={600} alt="Rocket" />
+
+      <h3>SVG Component</h3>
+      <Logo width={100} height={100} fill="blue" />
+    </section>
+
+    <footer>
+      <p>
+        Learn more about Astro 5.0 on the <a
+          href="https://astro.build/blog/astro-5/">official blog</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
+<style>
+  h1 {
+    color: orange;
+  }
+</style>
